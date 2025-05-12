@@ -1,0 +1,225 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[italian]{babel} % Imposta l'italiano come lingua del documento
+
+% Pacchetti per una migliore tipografia
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% Pacchetti per l'aspetto della pagina
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+
+\usepackage{setspace}
+\onehalfspacing
+
+% Pacchetti per titoli e intestazioni personalizzate
+\usepackage{titlesec}
+\titleformat{\section}
+{\normalfont\Large\bfseries}
+{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\large\bfseries\itshape}
+{\thesubsection}{1em}{}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\nouppercase{\leftmark}} % Intestazione a sinistra per tutte le pagine
+\fancyhead[R]{\thepage}                % Numero di pagina a destra per tutte le pagine
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Pacchetti per elementi visivi (opzionale)
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{svg}
+
+% Ipercollegamenti (opzionale)
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+% Pacchetti per elementi visivi (opzionale)
+\usepackage{graphicx}             % Inserimento di immagini
+\usepackage{xcolor}               % Gestione dei colori
+
+% Ipercollegamenti (opzionale)
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+
+\title{Simone Home Hub}
+\author{Simone Arena}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.2\textwidth]{media/Home_Assistant_logo_(2023).svg}
+    \hspace{1cm} % Spazio tra le immagini
+    \includegraphics[width=0.2\textwidth]{media/esphome-logo.jpeg}
+    \caption{A sinistra il logo di Home Assistant, a destra il logo di ESPHome}
+    \label{fig:logos}
+\end{figure}
+
+\tableofcontents
+
+\newpage
+
+\section{Metanote sul documento}
+Questo documento è stato redatto in LaTeX, un linguaggio di markup per la scrittura di documenti scientifici e tecnici.
+LaTeX è particolarmente utile per la creazione di documenti complessi, come tesi, articoli scientifici e relazioni tecniche, 
+grazie alla sua capacità di gestire formule matematiche, bibliografie e riferimenti incrociati in modo efficiente.
+
+\newpage
+
+\section{Introduzione}
+Il presente progetto si inserisce nel dinamico 
+e in continua evoluzione panorama dell'Internet 
+delle Cose (IoT) e dell'analisi dei Big Data. 
+L'IoT rappresenta una fitta rete di dispositivi 
+fisici interconnessi, capaci di raccogliere e 
+scambiare dati in tempo reale. Questa mole crescente 
+di informazioni, definita come Big Data, offre opportunità 
+senza precedenti per comprendere e ottimizzare il nostro ambiente, 
+in particolare all'interno delle nostre abitazioni. 
+In questo contesto, esploreremo le potenzialità di una 
+piattaforma open-source di home automation come Home Assistant, 
+focalizzandoci su come essa possa agire da fulcro per l'integrazione 
+di diversi dispositivi intelligenti e sulla gestione dei dati generati, 
+aprendo la strada a soluzioni innovative per una casa più efficiente, 
+sicura e personalizzata.
+
+\section{Obiettivi}
+L'obiettivo ultimo nel progetto non è propriamente definito, in quanto,
+trattandosi di una tecnologia 
+in continua evoluzione, sarebbe difficile
+definire un traguardo 
+finale. Tuttavia, si 
+possono definire alcune milestones
+intermedie e avanzate, 
+che possono essere raggiunge in un tempo ragionevole,
+arrivando ad un risultato soddisfacente.
+Le milestones intermedie sono:
+\begin{itemize}
+    \item Setup del server Home Assistant
+    \item Integrazione dei primi dispositivi domotici
+    \item Creazione di automazioni di base
+    
+\end{itemize}
+
+Le milestones avanzate sono:
+\begin{itemize}
+    \item Integrazione di dispositivi avanzati (telecamere, sensori di movimento, ecc.)
+    \item Creazione di automazioni complesse
+    \item Analisi dei dati generati dai dispositivi
+    \item Strutturazione definitiva della dashboard
+\end{itemize}
+
+\section{Introduzione}
+
+\subsection{Home Assistant}
+
+\subsubsection{Cos'è Home Assistant}
+\textit{Home Assistant} è una piattaforma di automazione domestica. È gratis e open-source, e
+rappresenta un'alternativa completamente locale a servizi come HomeBridge e SmartThings.
+
+\subsubsection{Perchè Home Assistant}
+Home Assistant rende possibile l'automazione domestica senza la necessità di un cloud,
+quindi senza dipendere dall'infrastuttura internet, da server remoti o da servizi esterni.
+Questo rende l'esperienza utente più fluida e l'operabilità piu affidabile.
+Un sistema basato su Home Assistant è di sua natura un sistema DIY. La sua vasta compatibilità
+con i dispositivi è dovuta proprio al fatto che ogni sensore o microcontrollore può essere integrato
+deve essere configurato e programmato individualmente. Ciò permette numerose possibilità di
+personalizzazione: ogni sistema può essere adattato alle esigenze specifiche dell'utente.
+
+\subsubsection{Perché preferire HAss alle soluzioni cloud-based}
+La grande maggioranza dei dispositivi smart è progettata per essere utilizzata basandosi su
+un'infrastuttura basata sul web, che spesso rende più facile e immediato il setup iniziale per gli utenti,
+ma anche più capillare il controllo dei dati da parte dei produttori, come la raccolta e l'analisi dei dati
+raccolti dai sensori domotici. Questo è un aspetto che non deve essere sottovalutato, in quanto
+l'analisi dei dati è una pratica sempre più diffusa, che sta permettendo alle case produttrici di
+ottimizzare i propri prodotti, ma se non gestita correttamente, può portare a violazioni della privacy
+e alla diffusione di dati sensibili.
+
+\subsection{ESPHome}
+
+\subsubsection{Cos'è ESPHome}
+\href{https://esphome.io}{\textit{ESPHome}} è un framework \textbf{open-source} che permette di creare firmware personalizzati per dispositivi basati su ESP8266, ESP32 e RP2040,
+che sono ampiamente utilizzati in progetti di automazione domestica e IoT grazie alla loro versatilità e facilità d'uso.
+
+\subsubsection{Perché ESPHome}
+\begin{itemize}
+    \item In questo progetto verranno utilizzati dispositivi basati su ESP8266 e ESP32;
+    \item ESPHome semplifica la configurazione e la programmazione di questi dispositivi, 
+    consentendo agli utenti di definire il comportamento del dispositivo attraverso un file di configurazione YAML.
+    In questo file, gli utenti possono specificare le funzionalità desiderate, come sensori, attuatori e altre componenti hardware. 
+    Una volta configurato, ESPHome genera automaticamente il firmware necessario per il microcontrollore, che può essere caricato direttamente sul dispositivo;
+    \item Questo approccio consente di risparmiare tempo e fatica nella scrittura del codice, rendendo l'automazione domestica più accessibile anche a chi non ha esperienza di programmazione;
+    \item ESPHome offre un'integrazione fluida con Home Assistant, consentendo agli utenti di monitorare e controllare i dispositivi direttamente dalla dashboard.
+
+\end{itemize}
+
+\section{Sviluppo del progetto}
+
+\subsection{Setup del server}
+Per l'hosting di Home Assistant di questo progetto è stato scelto un server dedicato.
+Il server in questione non è altro che un computer da ufficio datato ormai in disuso, basato su
+piattaforma x86.
+In questo caso Home Assistant sarà installato come un vero sistema operativo, che verrà esclusivamente
+gestito dal computer dedicato.
+
+\subsubsection{Preparazione della macchina}
+È fondamentale che la macchina dedicata sia in buone condizioni, che non presenti problemi hardware e che
+i componenti al suo interno siano orientati al risparmio energetico. Essendo un computer destinato
+a rimanere acceso 24 ore su 24, è importante che al suo interno sia munito di adeguati sistemi di raffreddamento.
+
+\subsubsection{Scelta dell'hardware}
+La scelta dell'hardware è fondamentale per garantire prestazioni ottimali e un funzionamento affidabile del sistema.
+Per l'installazione del sistema operativo è richiesto un computer con almeno 2 GB di RAM e 32 GB di spazio di archiviazione.
+Home Assistant OS può essere installato sia su SBC, come un Raspberry Pi, che su una comune macchina x86.
+Nella scelta del supporto di memoria, è preferibile optare per un'unità a stato solido (SSD) piuttosto che un disco rigido tradizionale (HDD),
+in quanto, oltre alle prestazioni nettamente superiori, gli SSD non prevedono parti meccaniche in movimento, non sono quindi
+soggetti a usura meccanica e spesso consumano meno energia.
+
+\subsubsection{Installazione del sistema operativo}
+In questo caso, il sistema operativo scelto è \textit{Home Assistant Operating System}, che è una distribuzione Linux
+ottimizzata per eseguire Home Assistant, che non prevede un'interfaccia grafica, ma è gestita tramite un'interfaccia web.
+Questo sistema operativo è progettato per essere installato su hardware dedicato, come un Raspberry Pi o un server x86, 
+e offre un'installazione semplificata e una gestione centralizzata dei dispositivi e delle automazioni.
+L'installazione di Home Assistant OS è un processo relativamente semplice.
+\begin{enumerate}
+    \item Scaricare l'immagine del sistema operativo dal sito ufficiale di Home Assistant;
+    \item Creare un'unità USB avviabile utilizzando un software come Balena Etcher o Rufus;
+    \item Avviare il computer dal supporto USB e seguire le istruzioni per completare l'installazione.
+    \item Una volta completata l'installazione, il sistema si riavvierà e Home Assistant sarà accessibile tramite un browser web all'indirizzo IP del server.
+\end{enumerate}
+
+Solamente durante questo processo sarà necessario un monitor e una tastiera, che serviranno per interagire con l'interfaccia
+a testo per la primissima configurazione.
+\subsubsection{Posizionamento del server}
+Una volta completata l'installazione, il server può essere posizionato in un luogo strategico all'interno della casa,
+possibilmente raggiunto da una rete cablata, per garantire una connessione stabile e veloce.
+Ad ogni modo, il server può essere posizionato in un luogo remoto, purché sia raggiunto da una rete Wif-Fi.
+L'importanche è che la scelta del posizionamento sia fatta in modo da garantire la sicurezza della macchina, che deve
+essere posta su un supporto stabile e sicuro, lontana da oggetti infiammabili, da fonti di calore e da umidità.
+
+
+
+\section{Conclusioni}
+
+\end{document}
