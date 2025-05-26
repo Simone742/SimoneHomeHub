@@ -76,6 +76,8 @@
     \label{fig:logos}
 \end{figure}
 
+\newpage
+
 \tableofcontents
 
 \newpage
@@ -114,6 +116,8 @@ possono definire alcune milestones
 intermedie e avanzate, 
 che possono essere raggiunge in un tempo ragionevole,
 arrivando ad un risultato soddisfacente.
+In particolare, il progetto in questo caso si propone di creare un sistema
+di automazione del mio piccolo orto, rendendo automatica l'irrigazione delle piantine.
 Le milestones intermedie sono:
 \begin{itemize}
     \item Setup del server Home Assistant
@@ -127,6 +131,8 @@ Le milestones avanzate sono:
     \item Integrazione di dispositivi avanzati (telecamere, sensori di movimento, ecc.)
     \item Creazione di automazioni complesse
     \item Analisi dei dati generati dai dispositivi
+    \item Posizionamento di un sensore di umidità del terreno
+    \item Integrazione di un sistema di irrigazione automatica
     \item Strutturazione definitiva della dashboard
 \end{itemize}
 
@@ -211,12 +217,46 @@ L'installazione di Home Assistant OS è un processo relativamente semplice.
 
 Solamente durante questo processo sarà necessario un monitor e una tastiera, che serviranno per interagire con l'interfaccia
 a testo per la primissima configurazione.
+
 \subsubsection{Posizionamento del server}
 Una volta completata l'installazione, il server può essere posizionato in un luogo strategico all'interno della casa,
 possibilmente raggiunto da una rete cablata, per garantire una connessione stabile e veloce.
 Ad ogni modo, il server può essere posizionato in un luogo remoto, purché sia raggiunto da una rete Wif-Fi.
 L'importanche è che la scelta del posizionamento sia fatta in modo da garantire la sicurezza della macchina, che deve
 essere posta su un supporto stabile e sicuro, lontana da oggetti infiammabili, da fonti di calore e da umidità.
+
+\subsection{Strutturazione della rete}
+Per poter garantirei funzionamento dei microcontrollori all'interno dell'orto, è 
+necessaria una copertura Wi-Fi adeguata, quindi di conseguenza bisognerà procedere
+all'acquisto e al posizionamento di un access point Wi-Fi, che andrà cablato.
+
+\subsubsection{Scelta dell'access point}
+In questo caso, è sufficiente qualsiasi access point, purché sia compatibibile con
+la frequenza di 2.4 GHz, che è la frequenza più comunemente utilizzata dai dispositivi IoT e
+dagli ESP32. Per motivi quasi esclusivamente economici è stato scelto il Tenda F3.
+
+\subsubsection{Configurazione dell'access point}
+Di default, il Tenda F3 è impostato come un router. Per poterne fare l'uso di cui
+necessitiamo, sarà quindi necessario procedere alla configurazione, collegando
+il proprio computer all'AP tramite cavo Ethernet e accedendo alla sua dashboard
+tramite l'indirizzo IP di default fornito dal costruttore.
+In questo caso è stato scelto di creare una rete Wi-Fi separata, con un ssid diverso
+da quella domestica, anche se all'access point è stato dato un indirizzo IP appartenente
+alla rete di casa. La manzione del DHCP è stata delegata al router.
+
+\subsubsection{Posizionamento dell'access point}
+È fondamentale che l'access point sia ben posionato per garantire una copertura omogenea
+su tutta la superficie dell'orto e quindi non creare limitazioni, permettendo di posizionare
+microcontrollori Wi-Fi liberamente. Se l'AP viene posizionato esternamente ed
+il suo modello non è stato concepito per trovarsi all'aria aperta, esposto
+alle intemperie e al clima, è fortemente consigliato posizionarlo all'interno di un
+contenitore ermetico.
+
+\subsubsection{Cablaggio dell'access point}
+Nel mio caso, l'orto si trova su un lato della mia casa dal quale sono presenti diversi
+corrugati che partono dall'interno. Per questo, una volta posizionato l'AP sono stati
+fatti passare grazie a una sonda sia il cavo Ethernet proveniente da uno switch collegato
+al router domestico, sia il cavo di alimentazione.
 
 
 
