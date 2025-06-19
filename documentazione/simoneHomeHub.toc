@@ -1,25 +1,35 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
-\contentsline {section}{\numberline {1}Metanote sul documento}{3}{section.1}%
-\contentsline {section}{\numberline {2}Introduzione}{4}{section.2}%
-\contentsline {section}{\numberline {3}Obiettivi}{4}{section.3}%
-\contentsline {section}{\numberline {4}Introduzione}{4}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Home Assistant}{4}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Cos'è Home Assistant}{4}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Perchè Home Assistant}{5}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Perché preferire HAss alle soluzioni cloud-based}{5}{subsubsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.2}ESPHome}{5}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Cos'è ESPHome}{5}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Perché ESPHome}{5}{subsubsection.4.2.2}%
-\contentsline {section}{\numberline {5}Sviluppo del progetto}{6}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Setup del server}{6}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Preparazione della macchina}{6}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}Scelta dell'hardware}{6}{subsubsection.5.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.3}Installazione del sistema operativo}{6}{subsubsection.5.1.3}%
-\contentsline {subsubsection}{\numberline {5.1.4}Posizionamento del server}{7}{subsubsection.5.1.4}%
-\contentsline {subsection}{\numberline {5.2}Strutturazione della rete}{7}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}Scelta dell'access point}{7}{subsubsection.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.2}Configurazione dell'access point}{7}{subsubsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.3}Posizionamento dell'access point}{7}{subsubsection.5.2.3}%
-\contentsline {subsubsection}{\numberline {5.2.4}Cablaggio dell'access point}{7}{subsubsection.5.2.4}%
-\contentsline {section}{\numberline {6}Conclusioni}{8}{section.6}%
+\contentsline {section}{\numberline {1}Introduzione}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Obiettivi}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Home Assistant}{4}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Cos'è Home Assistant}{4}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Perchè Home Assistant}{4}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Perché preferire HAss alle soluzioni cloud-based}{5}{subsubsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.3}ESPHome}{5}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Cos'è ESPHome}{6}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Perché ESPHome}{6}{subsubsection.1.3.2}%
+\contentsline {section}{\numberline {2}Sviluppo del progetto}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Setup del server}{6}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Preparazione della macchina}{6}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Scelta dell'hardware}{7}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Installazione del sistema operativo}{7}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Posizionamento del server}{8}{subsubsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.2}Strutturazione della rete}{8}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Scelta dell'access point}{8}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Configurazione dell'access point}{8}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Posizionamento dell'access point}{9}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.3}Configurazione di Home Assistant}{9}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Preparazione dell'ESP32 con ESPHome}{10}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Configurazione dei microcontrollori con ESPHome}{10}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Configurazione dei sensori}{11}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Programmazione del microcontrollore}{11}{subsubsection.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.3.5}Configurazione dei pulsanti}{13}{subsubsection.2.3.5}%
+\contentsline {subsubsection}{\numberline {2.3.6}Configurazione della pompa}{13}{subsubsection.2.3.6}%
+\contentsline {subsubsection}{\numberline {2.3.7}Installazione del pannello fotovoltaico}{13}{subsubsection.2.3.7}%
+\contentsline {subsubsection}{\numberline {2.3.8}Posizionamento dei microcontrollori}{14}{subsubsection.2.3.8}%
+\contentsline {subsubsection}{\numberline {2.3.9}Programmazione delle automazioni di Home Assistant}{15}{subsubsection.2.3.9}%
+\contentsline {subsubsection}{\numberline {2.3.10}Configurazione della dashboard di Home Assistant}{16}{subsubsection.2.3.10}%
+\contentsline {section}{\numberline {3}Risultato}{16}{section.3}%
+\contentsline {section}{\numberline {4}Osservazioni e riflessioni}{16}{section.4}%
+\contentsline {section}{\numberline {5}Conclusioni}{17}{section.5}%
